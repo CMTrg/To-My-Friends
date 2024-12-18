@@ -1,68 +1,143 @@
+@import url('https://fonts.googleapis.com/css2?family=Paytone+One&display=swap');
+/* RESET */
+* {
+  margin: 0;
+  padding: 20px;
+  box-sizing: border-box;
+  font-family: "Paytone One", sans-serif !important;
+  overscroll-behavior: none !important;
+  overflow-x: hidden; 
+  overflow-y:  hidden; 
+}
+
+
+span {
+  font-size: 8rem;
+  color: var(--TEXTCOLOR1);
+  z-index: 1;
+  position: relative;
+/*   display: none;
+ */}
+
+span i{
+  color: var(--TEXTCOLOR2);
+}
+
+spline-viewer{
+  z-index: 10;
+  position: absolute;
+  width: 75%;
+  height: 120%;
+  display: block;
+/*   display: none;
+ */
+}
+
+button{
+  height: 25px;
+  width: auto;
+  color: black;
+  border-radius: 25px;
+  align-items: center;
+  align-content: center;
+  position: fixed;
+  bottom: 5%;
+  right: 5%;
+  z-index: 100;
+
+
+
+}
+button:hover{
+  background-color: antiquewhite;
+}
+button:active{
+  background-color: var(--TEXTCOLOR2);
+}
+
+p{
+  display: flex;
+  flex-direction: row;
+
+}
+img{
+  max-height: 250px;
+  width: auto;
+}
+.images-container {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  margin: 20px 0;
+  animation-duration: 5s;
+  animation-iteration-count: infinite;
+}
+
+/* Move the container to the left */
+.move-left {
+  animation-name: moveLeft;
+}
+
+@keyframes moveLeft {
+  0% {
+    transform: translateX(0);
+  }
+  50% {
+    transform: translateX(-200px);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+/* Move the container to the right */
+.move-right {
+  animation-name: moveRight;
+}
+
+@keyframes moveRight {
+  0% {
+    transform: translateX(0);
+  }
+  50% {
+    transform: translateX(200px);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+/*  VARIABLES */
 :root {
-  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
-  line-height: 1.5;
-  font-weight: 400;
+  /*COLOR*/
+  --BGCOLOR: #3626A7;
+  --TEXTCOLOR1: #fff;
+  --TEXTCOLOR2: #FEE440;
 
-  color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
-
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
-a {
-  font-weight: 500;
-  color: #646cff;
-  text-decoration: inherit;
-}
-a:hover {
-  color: #535bf2;
 }
 
 body {
-  margin: 0;
+  background-color: var(--BGCOLOR);
+  overflow-x: hidden;
+  width: 100%;
+  height: 100vh;
   display: flex;
-  place-items: center;
-  min-width: 320px;
-  min-height: 100vh;
+  align-items: center;
+  justify-content: center;
 }
 
-h1 {
-  font-size: 3.2em;
-  line-height: 1.1;
-}
-
-button {
-  border-radius: 8px;
-  border: 1px solid transparent;
-  padding: 0.6em 1.2em;
-  font-size: 1em;
-  font-weight: 500;
-  font-family: inherit;
-  background-color: #1a1a1a;
-  cursor: pointer;
-  transition: border-color 0.25s;
-}
-button:hover {
-  border-color: #646cff;
-}
-button:focus,
-button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
-}
-
-@media (prefers-color-scheme: light) {
-  :root {
-    color: #213547;
-    background-color: #ffffff;
+@media (min-width: 1025px) and (max-width: 1280px) {
+  span {
+    font-size: 4rem;
   }
-  a:hover {
-    color: #747bff;
+}
+
+@media (min-width: 481px) and (max-width: 767px) {
+  span{
+    font-size: 2rem;
   }
-  button {
-    background-color: #f9f9f9;
+}
+@media (min-width: 320px) and (max-width: 480px) {
+  span{
+    font-size: 3rem;
   }
 }
